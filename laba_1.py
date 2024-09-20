@@ -9,19 +9,19 @@ class Econom:
     def __init__(self, x: list, y: list):
         self.list_x = x
         self.list_y = y
-        self.list_mean = []
-        self.list_xy = create_list_xy(x, y)
-        self.list_x_square = create_list_square(x)
-        self.list_y_square = create_list_square(y)
+        self.list_mean = create_list_mean(y, x)
+        self.list_xy = create_list_xy(x, y, self.list_mean)
+        self.list_x_square = create_list_square(x, self.list_mean)
+        self.list_y_square = create_list_square(y, self.list_mean)
 
     def __repr__(self):
         return (
-            f"{self.list_x}\n"
-            f"{self.list_y}\n"
-            f"{self.list_mean}\n"
-            f"{self.list_xy}\n"
-            f"{self.list_y_square}\n"
-            f"{self.list_y_square}\n"
+            f"Список x: {self.list_x}\n"
+            f"Список y: {self.list_y}\n"
+            f"Список средних значений: {self.list_mean}\n"
+            f"Список x*y: {self.list_xy}\n"
+            f"Список x^2: {self.list_x_square}\n"
+            f"Список y^2: {self.list_y_square}\n"
         )
 
 
